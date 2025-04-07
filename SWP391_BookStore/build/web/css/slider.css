@@ -1,0 +1,81 @@
+/*************************
+**********Slider**********
+**************************/
+
+
+.containers {
+    width: 80%;
+    height: 80%;
+    margin: 50px auto;
+    position: relative; /* Add this */
+}
+
+
+.main {
+    height: 47vh;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.list-image {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-image div {
+    flex: 1;
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.list-image div:hover {
+    transform: scale(1.05);
+}
+
+.imgs {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.control {
+    position: absolute;
+    top: 50%;
+    font-size: 70px;
+    color: white;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+    position: absolute;
+}
+
+.next {
+    right: 10px;
+    position: absolute;
+}
+
+.active {
+    background: red;
+    border: 2px solid white;
+    opacity: 0.8;
+}
+
+
+.img-feature {
+    width: 100%;
+    height: calc(100% - 20px);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.img-feature:hover {
+    transform: scale(1.02);
+}

@@ -1,0 +1,73 @@
+/* Container cho phần review */
+.reviews-section {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.add-review-section {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* Tiêu đề phần review */
+.reviews-section h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Mỗi review */
+.review-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+/* Header của review (tên người đánh giá và thời gian) */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.reviewer-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Phần rating */
+.review-rating {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #f39c12;
+}
+
+/* Phần comment */
+.review-comment p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+}
