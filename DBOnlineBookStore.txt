@@ -1,0 +1,167 @@
+drop database bookstore;
+create database bookstore;
+use bookstore;
+CREATE TABLE Role (
+    RoleId INT PRIMARY KEY auto_increment,
+    RoleName VARCHAR(50),
+    Status VARCHAR(50)
+);
+CREATE TABLE Account (
+    AccountId INT PRIMARY KEY auto_increment,
+    Username VARCHAR(50) NOT NULL,
+    Password VARCHAR(255) NOT NULL,
+    RoleId INT,
+    Fullname VARCHAR(100),
+    Phone VARCHAR(100),
+    DoB DATE,
+    Gender VARCHAR(10),
+    Email VARCHAR(100),
+    CreatedAt DATETIME,
+    UpdatedAt DATETIME,
+    Status VARCHAR(50),
+    CONSTRAINT FK_Account_Role FOREIGN KEY (RoleId) REFERENCES Role(RoleId)
+    
+);
+
+CREATE TABLE Address (
+    AddressId INT PRIMARY KEY auto_increment,
+    AccountId INT,
+    isMain INT,
+    Street VARCHAR(100),
+    Ward VARCHAR(50),
+    City VARCHAR(50),
+    CONSTRAINT FK_Address_Account FOREIGN KEY (AccountId) REFERENCES Account(AccountId)
+);
+
+
+
+CREATE TABLE Blog (
+    BlogId INT PRIMARY KEY auto_increment,
+    Title VARCHAR(255),
+    AuthorId INT,
+    Description TEXT,
+    Image VARCHAR(255),
+    Content TEXT,
+    CreatedAt DATETIME,
+    UpdatedAt DATETIME,
+    Status VARCHAR(50),
+    CONSTRAINT FK_Blog_Account FOREIGN KEY (AuthorId) REFERENCES Account(AccountId)
+);
+
+CREATE TABLE Author (
+    AuthorId INT PRIMARY KEY auto_increment,
+    AuthorName VARCHAR(100),
+    DoB DATE,
+    Description TEXT
+);
+
+CREATE TABLE Categories (
+    CategoryId INT PRIMARY KEY auto_increment,
+    CategoryName VARCHAR(100),
+    Status VARCHAR(50),
+    Description TEXT
+);
+
+CREATE TABLE Book (
+    BookId INT PRIMARY KEY auto_increment,
+    Title VARCHAR(255),
+    AuthorId INT,
+    Stock INT,
+    Price DECIMAL(10, 2),
+    Description TEXT,
+    ReleaseDate DATE,
+    NXB VARCHAR(100),
+    CategoryId INT,
+    Status VARCHAR(50),
+    CONSTRAINT FK_Book_Author FOREIGN KEY (AuthorId) REFERENCES Author(AuthorId),
+    CONSTRAINT FK_Book_Category FOREIGN KEY (CategoryId) REFERENCES Categories(CategoryId)
+);
+
+CREATE TABLE Cart(
+	CartId INT PRIMARY KEY auto_increment,
+    AccountId Int,
+    TotalAmount DECIMAL(10, 2),
+    TotalQuantity INT, 
+    UNIQUE KEY (AccountId), -- Đảm bảo mỗi user chỉ có duy nhất 1 cart
+    FOREIGN KEY (AccountId) REFERENCES Account(AccountId) ON DELETE CASCADE
+);
+
+
+CREATE TABLE CartItem(
+CartId Int,
+BookId Int,
+Quantity Int,
+Price Float,
+isChecked boolean,
+PRIMARY KEY(CartId, BookId),
+CONSTRAINT FK_CartItem_Book FOREIGN KEY (BookId) REFERENCES Book(BookId) ON DELETE CASCADE,
+CONSTRAINT FK_CartItem_cart FOREIGN KEY (CartId) REFERENCES Cart(CartId) ON DELETE CASCADE
+);
+
+
+CREATE TABLE `Order` (
+    OrderId INT PRIMARY KEY auto_increment,
+    AccountId INT,
+    CartId INT,
+    PaymentId INT,
+    TotalAmount DECIMAL(10, 2),
+    Message TEXT,
+    DeliveryTime DATETIME,
+    AddressId INT,
+    CreatedAt DATETIME,
+    UpdatedAt DATETIME,
+    Status VARCHAR(50),
+    CONSTRAINT FK_Order_Account FOREIGN KEY (AccountId) REFERENCES Account(AccountId),
+    CONSTRAINT FK_Order_Address FOREIGN KEY (AddressId) REFERENCES Address(AddressId),
+CONSTRAINT FK_Order_CartId FOREIGN KEY (CartId) REFERENCES Cart(CartId)
+);
+
+CREATE TABLE Payment (
+    PaymentId INT PRIMARY KEY auto_increment,
+    AccountId INT,
+    PaymentType VARCHAR(15),
+    TransactionCode VARCHAR(15),
+    OrderId INT,
+    TotalAmount DECIMAL(10, 2),
+    Status VARCHAR(50),
+    CONSTRAINT FK_Payment_Account FOREIGN KEY (AccountId) REFERENCES Account(AccountId),
+    CONSTRAINT FK_Payment_Order FOREIGN KEY (OrderId) REFERENCES `Order`(OrderId)
+);
+
+CREATE TABLE OrderDetails (
+    OrderDetailId INT PRIMARY KEY auto_increment,
+    OrderId INT,
+    BookId INT,
+    Quantity INT,
+    TotalPrice DECIMAL(10, 2),
+    CONSTRAINT FK_OrderDetails_Order FOREIGN KEY (OrderId) REFERENCES `Order`(OrderId),
+    CONSTRAINT FK_OrderDetails_Book FOREIGN KEY (BookId) REFERENCES Book(BookId)
+);
+
+CREATE TABLE Discounts (
+    DiscountId INT PRIMARY KEY auto_increment,
+    StartDate DATE,
+    EndDate DATE,
+    DiscountPercent DECIMAL(5, 2),
+    Status VARCHAR(50)
+);
+
+CREATE TABLE Book_Discount (
+    BookId INT,
+    DiscountId INT,
+    PRIMARY KEY (BookId, DiscountId),
+    CONSTRAINT FK_Book_Discount_Book FOREIGN KEY (BookId) REFERENCES `Book`(BookId),
+    CONSTRAINT FK_Book_Discount_Discount FOREIGN KEY (DiscountId) REFERENCES Discounts(DiscountId)
+);
+
+CREATE TABLE Review (
+    ReviewId INT PRIMARY KEY auto_increment,
+    BookId INT,
+    AccountId INT,
+    Rating INT,
+    Comment TEXT,
+    ReviewDate DATE,
+    Status VARCHAR(50),
+    CONSTRAINT FK_Review_Book FOREIGN KEY (BookId) REFERENCES Book(BookId),
+    CONSTRAINT FK_Review_Account FOREIGN KEY (AccountId) REFERENCES Account(AccountId)
+);

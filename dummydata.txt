@@ -1,0 +1,277 @@
+INSERT INTO Categories (CategoryName, Status, Description)
+VALUES
+('Fiction', 'Active', 'Books that contain fictional stories and narratives.'),
+('Science Fiction', 'Active', 'Books that deal with futuristic or advanced scientific concepts.'),
+('Classics', 'Active', 'Books that are recognized as being of high literary merit.'),
+('Romance', 'Active', 'Books focused on romantic relationships between characters.'),
+('Horror', 'Active', 'Books that are intended to evoke fear and suspense in the reader.'),
+('Fantasy', 'Active', 'Books that contain magical elements or fantastical worlds.'),
+('Biography', 'Active', 'Books that narrate the life stories of real people.'),
+('Historical Fiction', 'Active', 'Books set in a specific historical period but include fictional events.'),
+('Non-Fiction', 'Active', 'Books that are based on factual information or real events.'),
+('Poetry', 'Active', 'Books that contain collections of poems or verse.');
+
+INSERT INTO Author (AuthorName, DoB, Description)
+VALUES
+('F. Scott Fitzgerald', '1896-09-24', 'American novelist best known for writing The Great Gatsby.'),
+('George Orwell', '1903-06-25', 'English novelist and journalist, known for 1984 and Animal Farm.'),
+('Harper Lee', '1926-04-28', 'American author of the Pulitzer Prize-winning novel To Kill a Mockingbird.'),
+('Jane Austen', '1775-12-16', 'English novelist known for her six major novels, including Pride and Prejudice.'),
+('J.D. Salinger', '1919-01-01', 'American writer best known for The Catcher in the Rye.'),
+('Herman Melville', '1819-08-01', 'American novelist and short story writer, best known for Moby Dick.'),
+('Homer', '1819-08-01', 'Ancient Greek poet traditionally said to be the author of The Odyssey and Iliad.'),
+('Leo Tolstoy', '1828-09-09', 'Russian writer, widely regarded as one of the greatest authors of all time.'),
+('Charlotte Brontë', '1816-04-21', 'English novelist and poet, best known for the novel Jane Eyre.'),
+('J.R.R. Tolkien', '1892-01-03', 'English writer, best known for The Lord of the Rings trilogy and The Hobbit.'),
+('Oscar Wilde', '1854-10-16', 'Irish poet, playwright, and author, known for works like The Picture of Dorian Gray.'),
+('Bram Stoker', '1847-11-08', 'Irish author, best known for writing the gothic horror novel Dracula.'),
+('Mary Shelley', '1797-08-30', 'English novelist, best known for writing Frankenstein, or The Modern Prometheus.'),
+('Charles Dickens', '1812-02-07', 'English writer and social critic, known for novels like A Tale of Two Cities and Great Expectations.'),
+('Anna Sewell', '1820-03-30', 'English novelist, best known for writing the novel Black Beauty.'),
+('Stephen King', '1947-09-21', 'American author of horror, supernatural fiction, and suspense novels, including The Shining.');
+
+
+INSERT INTO Book (Title, AuthorId, Stock, Price, Description, ReleaseDate, NXB, CategoryId, Status)
+VALUES
+('The Great Gatsby', 1, 50, 430000, 'A novel set in the Jazz Age that critiques the American Dream.', '1925-04-10', 'Charles Scribner\'s Sons', 1, 'Available'),
+('1984', 2, 30, 53000, 'A dystopian novel exploring totalitarianism and surveillance.', '1949-06-08', 'Secker & Warburg', 2, 'Available'),
+('To Kill a Mockingbird', 3, 45, 123000, 'A story of racial inequality and moral growth in the American South.', '1960-07-11', 'J.B. Lippincott & Co.', 3, 'Available'),
+('Pride and Prejudice', 4, 60, 221000, 'A classic romance novel that critiques societal norms.', '1813-01-28', 'T. Egerton', 4, 'Available'),
+('The Catcher in the Rye', 5, 20, 423000, 'A novel about teenage alienation and the search for meaning.', '1951-07-16', 'Little, Brown and Company', 5, 'Available'),
+('Moby Dick', 6, 25, 123000, 'A whaling voyage that explores themes of obsession and revenge.', '1851-10-18', 'Harper & Brothers', 6, 'Available'),
+('The Odyssey', 7, 40, 231000, 'An epic poem that tells the story of Odysseus\' long journey home.', '1851-10-18', 'Various', 7, 'Available'),
+('War and Peace', 8, 35, 123000, 'A historical novel set during the Napoleonic Wars in Russia.', '1869-01-01', 'The Russian Messenger', 8, 'Available'),
+('Jane Eyre', 9, 50, 332000, 'A novel about the life and experiences of an orphaned girl.', '1847-10-16', 'Smith, Elder & Co.', 4, 'Available'),
+('The Hobbit', 10, 60, 212000, 'A fantasy novel about the adventures of Bilbo Baggins.', '1937-09-21', 'George Allen & Unwin', 1, 'Available'),
+('The Lord of the Rings', 10, 40, 510000, 'An epic high-fantasy novel that follows the quest to destroy the One Ring.', '1954-07-29', 'George Allen & Unwin', 1, 'Available'),
+('Brave New World', 2, 30, 90000, 'A dystopian novel that explores the effects of a totalitarian society.', '1932-08-31', 'Chatto & Windus', 2, 'Available'),
+('The Picture of Dorian Gray', 11, 25, 111000, 'A novel about a man who remains eternally young while his portrait ages.', '1890-07-01', 'Lippincott’s Monthly Magazine', 3, 'Available'),
+('Dracula', 12, 50, 212000, 'A gothic horror novel about the infamous Count Dracula.', '1897-05-26', 'Archibald Constable and Company', 3, 'Available'),
+('Frankenstein', 13, 40, 111000, 'A novel about a scientist who creates a living being and the consequences.', '1818-01-01', 'Lackington, Hughes, Harding, Mavor & Jones', 3, 'Available'),
+('The Great Expectations', 3, 45, 231000, 'A coming-of-age novel that explores themes of wealth, love, and betrayal.', '1861-08-01', 'Chapman & Hall', 4, 'Available'),
+('Anna Karenina', 8, 20, 231000, 'A novel about the tragic life of Anna Karenina and her doomed love affair.', '1878-04-01', 'The Russian Messenger', 8, 'Available'),
+('The Shining', 14, 30, 330000, 'A horror novel that takes place in a haunted hotel in the snowy mountains.', '1977-01-28', 'Doubleday', 5, 'Available'),
+('Gone with the Wind', 15, 25, 110000, 'A historical romance set during the American Civil War.', '1936-06-30', 'Macmillan Publishers', 6, 'Available'),
+('The Chronicles of Narnia', 16, 50, 100000, 'A series of fantasy novels about the adventures in the magical land of Narnia.', '1950-10-16', 'Geoffrey Bles', 1, 'Available');
+
+INSERT INTO Role (RoleName, Status) VALUES ('admin', 'active');
+INSERT INTO Role (RoleName, Status) VALUES ('user', 'active');
+INSERT INTO Role (RoleName, Status) VALUES ('manager', 'active');
+
+INSERT INTO Account (Username, Password, RoleId, Fullname,Phone, DoB, Gender, Email, CreatedAt, UpdatedAt, Status)
+VALUES 
+  ('admin', 'admin', 1, 'Admin','0987767782', '1980-01-01', 'Male', 'admin@example.com', NOW(), NOW(), 'active'),
+  ('user', 'user', 2, 'User','0987676654', '1990-05-15', 'Male', 'john@example.com', NOW(), NOW(), 'active'),
+  ('manager', 'manager', 3,'Manager','0878987676', '1985-08-20', 'Female', 'manager1@example.com', NOW(), NOW(), 'active'),
+  ('user1', 'user1', 2, 'User One','0878987676', '1995-01-01', 'Male', 'user1@example.com', NOW(), NOW(), 'active'),
+  ('user2', 'user2', 2, 'User Two','0878987676', '1995-02-01', 'Female', 'user2@example.com', NOW(), NOW(), 'active'),
+  ('user3', 'user3', 2, 'User Three','0878987676', '1995-03-01', 'Male', 'user3@example.com', NOW(), NOW(), 'active'),
+  ('user4', 'user4', 2, 'User Four','0878987676', '1995-04-01', 'Female', 'user4@example.com', NOW(), NOW(), 'active'),
+  ('user5', 'user5', 2, 'User Five', '0878987676','1995-05-01', 'Male', 'user5@example.com', NOW(), NOW(), 'active');
+  -- Địa chỉ chính cho tài khoản admin (AccountId = 1)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (1, 1, '123 Admin St', 'CauGiay', 'HaNoi');
+
+-- Địa chỉ chính cho tài khoản john (AccountId = 2)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (2, 1, '456 John Ave', 'HoangMai', 'HaNoi');
+
+-- Địa chỉ phụ cho tài khoản john (AccountId = 2)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (2, 0, '789 John Second St', 'BaDinh', 'HaNoi');
+
+-- Địa chỉ chính cho tài khoản manager1 (AccountId = 3)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (2, 0, '321 Manager Blvd', 'DongDa', 'HaNoi');
+
+-- Địa chỉ chính cho tài khoản manager1 (AccountId = 3)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (3, 1, '321 Manager Blvd', 'DongDa', 'HaNoi');
+
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (4, 1, '101 Main St', 'DongDa', 'Hanoi');
+
+-- Địa chỉ chính cho user2 (AccountId = 2)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (5, 1, '202 Second St', 'DongDa', 'HaNoi');
+
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (6, 1, '303 Third St', 'DongDa', 'Hanoi');
+
+-- Địa chỉ cho user4 (AccountId = 4)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (7, 1, '404 Fourth St', 'DongDa', 'HaNoi');
+
+-- Địa chỉ cho user5 (AccountId = 5)
+INSERT INTO Address (AccountId, isMain, Street, Ward, City)
+VALUES (8, 1, '505 Fifth St', 'DongDa', 'HaNoi');
+
+-- Hàm để tạo ngày ngẫu nhiên trong khoảng từ '2023-01-01' đến '2025-12-31'
+SET @start_date = '2023-01-01';
+SET @end_date = '2025-12-31';
+SET @days_diff = TIMESTAMPDIFF(DAY, @start_date, @end_date);
+
+-- Thêm review cho BookId 1: The Great Gatsby
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(1, 2, 5, 'A timeless classic! Beautifully written and deeply moving.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(1, 4, 4, 'Great story, but a bit slow-paced for my taste.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(1, 5, 5, 'Absolutely loved it! The language is exquisite and the themes are still relevant today.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(1, 6, 3, 'It was okay, not as impactful as I expected.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(1, 7, 5, 'A masterpiece! Highly recommend reading this book.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 2: 1984
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(2, 4, 5, 'Disturbingly relevant and thought-provoking. A must-read dystopian novel.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(2, 7, 5, 'A chilling and powerful portrayal of totalitarianism.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(2, 8, 4, 'A bit depressing, but incredibly well-written and impactful.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(2, 6, 2, 'Found it too bleak and pessimistic. Not enjoyable for me.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(2, 5, 5, 'One of the most important books of the 20th century. A stark warning for humanity.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 3: To Kill a Mockingbird
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(3, 5, 5, 'A beautiful and poignant story about justice, prejudice, and childhood innocence.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(3, 7, 5, 'Harper Lee''s masterpiece! A book that everyone should read.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(3, 8, 4, 'Touching and insightful, though some parts are heartbreaking.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(3, 2, 5, 'An unforgettable story with memorable characters. Highly recommended.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(3, 4, 3, 'Good book, but a bit overrated in my opinion.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 4: Pride and Prejudice
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(4, 6, 5, 'Charming, witty, and romantic. Jane Austen at her best!', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(4, 7, 4, 'A delightful classic romance. Loved the characters and the humor.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(4, 8, 5, 'Jane Austen''s writing is brilliant! A timeless love story.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(4, 2, 4, 'Enjoyable and well-written, though a bit predictable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(4, 4, 3, 'Not my favorite genre, but I can see why it is so beloved.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 5: The Catcher in the Rye
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(5, 5, 4, 'A classic coming-of-age story. Holden Caulfield is a complex and relatable character.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(5, 7, 3, 'Interesting perspective, but Holden''s cynicism can be a bit much.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(5, 2, 4, 'Salinger''s writing is captivating. A classic for a reason.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(5, 4, 5, 'Captured the teenage angst perfectly. A book that stays with you.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(5, 8, 2, 'Did not connect with Holden at all. Found him whiny and unlikeable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 6: Moby Dick
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(6, 2, 4, 'An epic tale! Melville''s prose is dense but rewarding.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(6, 5, 3, 'A bit too long and rambling at times, but the whaling sections are fascinating.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(6, 7, 4, 'A classic of American literature. Ahab''s obsession is captivating.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(6, 6, 5, 'A literary masterpiece! The symbolism and themes are incredibly rich.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(6, 8, 2, 'Could not get into it. Too dense and slow for my liking.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 7: The Odyssey
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(7, 4, 5, 'An epic adventure! Homer''s storytelling is timeless and captivating.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(7, 5, 4, 'A classic for a reason. Odysseus''s journey is full of excitement and peril.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(7, 7, 5, 'The original hero''s journey! A foundational work of Western literature.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(7, 8, 4, 'Enjoyed the mythology and adventure, though some parts are a bit dated.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(7, 2, 3, 'Found it a bit long and repetitive in places.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 8: War and Peace
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(8, 2, 5, 'A monumental work! Tolstoy''s scope and depth are breathtaking.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(8, 4, 4, 'Epic in scale and emotionally resonant. A challenging but rewarding read.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(8, 6, 5, 'Tolstoy''s masterpiece! A profound exploration of life, love, and war.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(8, 8, 3, 'Incredibly long and detailed. Lost interest in the middle.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(8, 7, 4, 'A powerful and moving novel, though requires commitment.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 9: Jane Eyre
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(9, 4, 5, 'A gothic romance with a strong and independent heroine. Brontë''s writing is superb.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(9, 7, 4, 'A compelling story with a passionate romance and gothic atmosphere.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(9, 8, 5, 'Charlotte Brontë at her finest! Jane is an inspiring character.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(9, 5, 4, 'Enjoyed the romance and the gothic elements, though a bit melodramatic at times.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(9, 6, 3, 'Not really my style, but I can appreciate the classic appeal.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 10: The Hobbit
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(10, 6, 5, 'A delightful adventure! Tolkien''s world-building is magical and enchanting.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(10, 8, 5, 'Perfect for all ages! A wonderful introduction to Middle-earth.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(10, 7, 4, 'A fun and engaging fantasy adventure. Loved Bilbo and the dwarves.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(10, 2, 5, 'Tolkien''s imagination is incredible! A classic fantasy tale.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(10, 4, 3, 'A bit simplistic compared to Lord of the Rings, but still enjoyable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 11: The Lord of the Rings
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(11, 5, 5, 'An epic fantasy saga! Tolkien''s world is immersive and unforgettable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(11, 6, 5, 'The greatest fantasy series ever written! A masterpiece of world-building and storytelling.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(11, 7, 4, 'A vast and complex world with rich lore and compelling characters.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(11, 8, 5, 'Tolkien''s magnum opus! A must-read for any fantasy fan.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(11, 4, 3, 'A bit too dense and lengthy for me. Hard to get through at times.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 12: Brave New World
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(12, 2, 5, 'A chilling and prescient dystopian novel. Huxley''s vision is both terrifying and insightful.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(12, 4, 5, 'Another powerful dystopian classic! Explores themes of control, happiness, and individuality.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(12, 6, 4, 'Thought-provoking and unsettling. A relevant commentary on society.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(12, 8, 5, 'Huxley''s writing is brilliant and the world he creates is disturbing and fascinating.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(12, 7, 2, 'Found it too cynical and depressing. Did not enjoy the vision of the future.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 13: The Picture of Dorian Gray
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(13, 6, 4, 'A fascinating exploration of beauty, morality, and the corrupting influence of sin.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(13, 8, 4, 'Wilde''s wit and prose are captivating. Dorian Gray is a compellingly flawed character.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(13, 7, 5, 'A gothic masterpiece with a dark and philosophical heart.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(13, 2, 4, 'Enjoyed the decadent atmosphere and Wilde''s epigrams, though a bit slow in parts.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(13, 5, 3, 'Not really my cup of tea. Found it a bit too focused on aestheticism.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 14: Dracula
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(14, 5, 4, 'A classic gothic horror novel! Stoker''s epistolary style is effective and suspenseful.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(14, 6, 4, 'The quintessential vampire story. A chilling and atmospheric read.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(14, 7, 5, 'Stoker''s Dracula is iconic! A must-read for horror fans.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(14, 8, 4, 'Enjoyed the gothic atmosphere and suspense, though a bit dated in some aspects.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(14, 2, 3, 'Found it a bit slow and repetitive at times.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 15: Frankenstein
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(15, 2, 5, 'A groundbreaking work of gothic science fiction! Explores themes of creation, ambition, and humanity.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(15, 6, 5, 'Mary Shelley''s masterpiece! A thought-provoking and timeless novel.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(15, 7, 4, 'A powerful and moving story with complex characters and philosophical depth.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(15, 8, 5, 'A foundational work of science fiction and gothic literature.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(15, 5, 3, 'Found it a bit slow and overly descriptive in places.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 16: The Great Expectations
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(16, 2, 4, 'A classic coming-of-age story by Dickens. Pip''s journey is full of twists and turns.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(16, 4, 4, 'Dickens''s storytelling is masterful! Pip is a relatable and sympathetic character.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(16, 6, 5, 'A great novel with memorable characters and a compelling plot.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(16, 7, 4, 'Enjoyed the Victorian setting and Dickens''s social commentary, though a bit long.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(16, 8, 3, 'Not my favorite Dickens novel, but still a solid read.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 17: Anna Karenina
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(17, 2, 5, 'Another masterpiece by Tolstoy! Anna''s story is tragic and unforgettable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(17, 5, 4, 'A complex and emotionally resonant novel about love, society, and passion.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(17, 7, 5, 'Tolstoy''s depth of characterization is astounding. Anna is a fully realized tragic figure.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(17, 8, 3, 'Found it a bit too long and focused on Russian aristocracy.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(17, 6, 4, 'A powerful and moving novel, though requires patience.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 18: The Shining
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(18, 2, 5, 'A terrifying and suspenseful horror novel! King at his best.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(18, 5, 5, 'King''s masterpiece of psychological horror! The Overlook Hotel is a truly chilling setting.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(18, 4, 4, 'Creepy and atmospheric. A classic horror story.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(18, 8, 5, 'Stephen King at his most terrifying! A must-read for horror fans.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(18, 6, 2, 'Did not find it scary at all. Found it slow and predictable.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 19: Gone with the Wind
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(19, 8, 4, 'An epic historical romance set during the American Civil War. Scarlett O''Hara is an unforgettable character.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(19, 2, 4, 'A sweeping and dramatic story with a strong-willed heroine.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(19, 5, 5, 'A classic of Southern literature! Scarlett and Rhett''s story is captivating.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(19, 6, 3, 'A bit too long and focused on romance for my taste.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(19, 7, 4, 'Enjoyable and well-written, though some aspects are controversial today.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+-- Thêm review cho BookId 20: The Chronicles of Narnia
+INSERT INTO review (BookId, AccountId, Rating, Comment, ReviewDate, Status) VALUES
+(20, 8, 5, 'A magical and enchanting fantasy series for children and adults alike.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(20, 6, 5, 'C.S. Lewis created a wonderful world! A classic of children''s literature.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(20, 4, 4, 'A delightful and imaginative series with Christian allegories.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(20, 7, 5, 'Narnia is a place everyone should visit! Timeless tales of good vs. evil.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created'),
+(20, 2, 3, 'A bit too preachy for me at times, but still enjoyable as fantasy.', DATE_ADD(@start_date, INTERVAL FLOOR(RAND() * @days_diff) DAY), 'Created');
+
+INSERT INTO Account (Username, Password, RoleId, Fullname,Phone, DoB, Gender, Email, CreatedAt, UpdatedAt, Status)
+VALUES 
+  ('tungpham', '123456', 2, 'Tung Pham','0987767782', '1980-01-01', 'Male', 'tp@example.com', NOW(), NOW(), 'active');
+  
